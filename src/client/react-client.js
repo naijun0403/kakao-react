@@ -9,11 +9,9 @@ exports.ReactClient = (function () {
      * @param { AllConfig } config
      */
     function ReactClient(
-        userId,
         authorizeConfig,
         config
     ) {
-        this.userId = userId;
         this.authorization = authorizeConfig.accessToken + '-' + authorizeConfig.deviceUUID;
         this.config = config;
         this.client = new RequestClient('talk-pilsner.kakao.com');
@@ -92,17 +90,14 @@ exports.ReactClient = (function () {
     }
 
     /**
-     * @param { number } userId
      * @param { AuthorizeConfig } authorizeConfig
      * @param { AllConfig? } config
      */
     ReactClient.create = function (
-        userId,
         authorizeConfig,
         config
     ) {
         return new ReactClient(
-            userId,
             authorizeConfig,
             Object.assign(
                 JSON.parse(JSON.stringify(KakaoTalkConfig)),
