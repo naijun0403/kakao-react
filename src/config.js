@@ -1,6 +1,6 @@
 exports.KakaoTalkConfig = {
-    version: '10.1.7',
-    okhttpVersion: '4.9.3'
+    version: '11.0.0',
+    okhttpVersion: '4.10.0'
 }
 
 /**
